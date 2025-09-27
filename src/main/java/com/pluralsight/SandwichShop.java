@@ -35,12 +35,14 @@ public class SandwichShop {
         //discount based on age
         //if age is less than or equal to 17, 10% discount
         if (age <= 17) {
-            price = price * 0.90;       //multiplies by remaining amount
-
+            price = price - (price * 0.10);     //multiplies by remaining amount
+        }
+        else if (age >= 65) {
+            price = price - (price * 0.20);
         }
 
+        System.out.printf("Your total discounted price is: $%.2f\n", price);
 
-
+        scanner.close();
     }
-
 }
